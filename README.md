@@ -32,6 +32,8 @@ without calibration, and no policy is trained.
 
 ## Results
 
+### Simulation
+
 Average success (%) over the four LIBERO suites. The QbD-VLA allocation is selected on LIBERO-Spatial and applied
 unchanged to Object, Goal and Long; bits are parameter-weighted nominal values over all layer groups.
 
@@ -44,10 +46,29 @@ unchanged to Object, Goal and Long; bits are parameter-weighted nominal values o
 
 Sensitivity-based allocations (action error, activation kurtosis, reconstruction error) at the same cost reach 27.5,
 0.0 and 52.0% on π0.5 LIBERO-Spatial, where QbD-VLA reaches 98.5%. On SIMPLER the best allocation reaches 66.8%
-against 64.8% for uniform W4A6. On a Franka Research 3 arm the frozen allocation succeeds on 13 of 30 layouts for X-VLA
-(11 at full precision) but on none of six for π0.5 (six at full precision): **evaluate a selected configuration on the
-target robot and task before deploying it.** The results video (LIBERO rollouts and FR3 trials, conditions side by
-side) is attached to the [GitHub release](https://github.com/jiuyixu25/QbD-VLA/releases).
+against 64.8% for uniform W4A6.
+
+### Real robot
+
+<p align="center">
+  <img src="docs/figures/fr3_trials.gif" width="100%" alt="FR3 trials of X-VLA and pi0.5 at full precision and with the QbD-VLA allocation">
+</p>
+
+X-VLA and π0.5 are fine-tuned with LoRA on 411 demonstrations of a Franka Research 3 arm picking up a cube of a named
+colour, and the allocations selected on LIBERO-Spatial are deployed unchanged. For X-VLA the allocation succeeds on 13
+of 30 trials (11 at full precision). For π0.5 it succeeds on none of six (six at full precision) and never commands the
+gripper to close; the action-error and kurtosis allocations at the same cost also fail on all six, and uniform W8A8
+succeeds on five. **Evaluate a selected configuration on the target robot and task before deploying it.**
+
+<p align="center">
+  <img src="docs/figures/robot_examples.jpg" width="100%" alt="Example FR3 trials">
+</p>
+
+<p align="center"><em>Example trials of full precision, QbD-VLA, and the action-error and kurtosis allocations, three
+frames per trial, for X-VLA (left) and π0.5 (right).</em></p>
+
+The results video (LIBERO rollouts and FR3 trials, conditions side by side) is attached to the
+[GitHub release](https://github.com/jiuyixu25/QbD-VLA/releases).
 
 ## Install
 
