@@ -1,0 +1,172 @@
+{
+ "model": "xvla",
+ "suite": "libero_spatial",
+ "checkpoint": "2toINF/X-VLA-Libero",
+ "tau": 0.9,
+ "probe": {
+  "blocks": 3,
+  "from": 20,
+  "horizon": 300,
+  "n_tasks": 10
+ },
+ "anchor": {
+  "successes": 30,
+  "n": 30,
+  "score": 1.0,
+  "verdict": "anchor"
+ },
+ "floor": 0.9,
+ "stage_a": [
+  {
+   "level": "W8A8",
+   "verdict": "safe",
+   "successes": 20,
+   "n": 20,
+   "score": 1.0,
+   "budget": {
+    "w_bits_eff": 8.0,
+    "a_bits_eff": 8.0
+   }
+  },
+  {
+   "level": "W4A8",
+   "verdict": "safe",
+   "successes": 20,
+   "n": 20,
+   "score": 1.0,
+   "budget": {
+    "w_bits_eff": 4.0,
+    "a_bits_eff": 8.0
+   }
+  },
+  {
+   "level": "W4A6",
+   "verdict": "safe",
+   "successes": 28,
+   "n": 30,
+   "score": 0.9333333333333333,
+   "budget": {
+    "w_bits_eff": 4.0,
+    "a_bits_eff": 6.0
+   }
+  },
+  {
+   "level": "W4A4",
+   "verdict": "unsafe",
+   "successes": 0,
+   "n": 10,
+   "score": 0.0,
+   "budget": {
+    "w_bits_eff": 4.0,
+    "a_bits_eff": 4.0
+   }
+  }
+ ],
+ "uniform_floor": "W4A6",
+ "scan_all": true,
+ "relax_from_baseline": true,
+ "anchor_from": "search/xvla-spatial",
+ "stage_b": [
+  {
+   "group": "ve",
+   "to": "W4A4",
+   "verdict": "unsafe",
+   "successes": 5,
+   "n": 10,
+   "score": 0.5,
+   "bits_saved": 0.8480424684804255
+  },
+  {
+   "group": "llm",
+   "to": "W4A4",
+   "verdict": "safe",
+   "successes": 27,
+   "n": 30,
+   "score": 0.9,
+   "bits_saved": 0.3822163238221634
+  },
+  {
+   "group": "ah_qkv",
+   "to": "W4A4",
+   "verdict": "unsafe",
+   "successes": 0,
+   "n": 10,
+   "score": 0.0,
+   "bits_saved": 0.1911081619110817
+  },
+  {
+   "group": "ah_proj",
+   "to": "W4A4",
+   "verdict": "safe",
+   "successes": 29,
+   "n": 30,
+   "score": 0.9666666666666667,
+   "bits_saved": 0.06370272063702842
+  },
+  {
+   "group": "ah_fc1",
+   "to": "W4A4",
+   "verdict": "unsafe",
+   "successes": 5,
+   "n": 10,
+   "score": 0.5,
+   "bits_saved": 0.25481088254811013
+  },
+  {
+   "group": "ah_fc2",
+   "to": "W4A4",
+   "verdict": "unsafe",
+   "successes": 6,
+   "n": 10,
+   "score": 0.6,
+   "bits_saved": 0.25481088254811013
+  },
+  {
+   "group": "ah_rest",
+   "to": "W4A4",
+   "verdict": "safe",
+   "successes": 28,
+   "n": 30,
+   "score": 0.9333333333333333,
+   "bits_saved": 0.005308560053085998
+  }
+ ],
+ "stage_c": {
+  "joint_levels": {
+   "ve": "W4A6",
+   "llm": "W4A4",
+   "ah_qkv": "W4A6",
+   "ah_proj": "W4A4",
+   "ah_fc1": "W4A6",
+   "ah_fc2": "W4A6",
+   "ah_rest": "W4A4"
+  },
+  "verdict": "unsafe",
+  "successes": 26,
+  "n": 30,
+  "score": 0.8666666666666667,
+  "budget": {
+   "w_bits_eff": 4.0,
+   "a_bits_eff": 5.548772395487724
+  },
+  "fallback": {
+   "group": "llm",
+   "to": "W4A4"
+  }
+ },
+ "levels": {
+  "ve": "W4A6",
+  "llm": "W4A4",
+  "ah_qkv": "W4A6",
+  "ah_proj": "W4A6",
+  "ah_fc1": "W4A6",
+  "ah_fc2": "W4A6",
+  "ah_rest": "W4A6"
+ },
+ "budget": {
+  "w_bits_eff": 4.0,
+  "a_bits_eff": 5.617783676177837
+ },
+ "probe_episodes": 0,
+ "wall_s": 0.0
+}

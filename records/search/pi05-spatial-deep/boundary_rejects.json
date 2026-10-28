@@ -1,0 +1,123 @@
+{
+ "search": "search/pi05-spatial-deep",
+ "tau": 0.75,
+ "anchor": 0.9,
+ "floor": 0.675,
+ "window": 0.15,
+ "cap": 8,
+ "n_candidates_in_window": 7,
+ "selected": [
+  {
+   "key": "ah_adarms_in=W8A8|ah_adarms_post=W8A8|ah_attn=W4A8|ah_mlp=W4A6|ah_plumbing=BASELINE|llm=W4A8|ve=W4A6",
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A8",
+    "ah_attn": "W4A8",
+    "ah_adarms_in": "W8A8",
+    "ah_adarms_post": "W8A8",
+    "ah_mlp": "W4A6",
+    "ah_plumbing": "BASELINE"
+   },
+   "probe_successes": 19,
+   "probe_n": 30,
+   "probe_score": 0.6333,
+   "dist_to_floor": 0.0417
+  },
+  {
+   "key": "ah_adarms_in=W4A8|ah_adarms_post=W8A8|ah_attn=W4A8|ah_mlp=W4A6|ah_plumbing=BASELINE|llm=W4A6|ve=W4A6",
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A8",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W8A8",
+    "ah_mlp": "W4A6",
+    "ah_plumbing": "BASELINE"
+   },
+   "probe_successes": 19,
+   "probe_n": 30,
+   "probe_score": 0.6333,
+   "dist_to_floor": 0.0417
+  },
+  {
+   "key": "ah_adarms_in=W8A8|ah_adarms_post=W8A8|ah_attn=W8A8|ah_mlp=W4A6|ah_plumbing=BASELINE|llm=W4A6|ve=W4A6",
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W8A8",
+    "ah_adarms_in": "W8A8",
+    "ah_adarms_post": "W8A8",
+    "ah_mlp": "W4A6",
+    "ah_plumbing": "BASELINE"
+   },
+   "probe_successes": 19,
+   "probe_n": 30,
+   "probe_score": 0.6333,
+   "dist_to_floor": 0.0417
+  },
+  {
+   "key": "ah_adarms_in=W8A8|ah_adarms_post=W8A8|ah_attn=W4A8|ah_mlp=W4A6|ah_plumbing=BASELINE|llm=W4A6|ve=W4A6",
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A8",
+    "ah_adarms_in": "W8A8",
+    "ah_adarms_post": "W8A8",
+    "ah_mlp": "W4A6",
+    "ah_plumbing": "BASELINE"
+   },
+   "probe_successes": 19,
+   "probe_n": 30,
+   "probe_score": 0.6333,
+   "dist_to_floor": 0.0417
+  },
+  {
+   "key": "ah_adarms_in=W4A8|ah_adarms_post=W4A8|ah_attn=W4A8|ah_mlp=W4A6|ah_plumbing=BASELINE|llm=W4A6|ve=W4A6",
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A8",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A8",
+    "ah_mlp": "W4A6",
+    "ah_plumbing": "BASELINE"
+   },
+   "probe_successes": 17,
+   "probe_n": 30,
+   "probe_score": 0.5667,
+   "dist_to_floor": 0.1083
+  },
+  {
+   "key": "ah_adarms_in=W4A8|ah_adarms_post=W4A8|ah_attn=W4A6|ah_mlp=W4A6|ah_plumbing=BASELINE|llm=W4A6|ve=W4A6",
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A6",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A8",
+    "ah_mlp": "W4A6",
+    "ah_plumbing": "BASELINE"
+   },
+   "probe_successes": 17,
+   "probe_n": 30,
+   "probe_score": 0.5667,
+   "dist_to_floor": 0.1083
+  },
+  {
+   "key": "ah_adarms_in=W4A8|ah_adarms_post=W4A8|ah_attn=W4A4|ah_mlp=W4A6|ah_plumbing=BASELINE|llm=W4A6|ve=W4A6",
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A4",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A8",
+    "ah_mlp": "W4A6",
+    "ah_plumbing": "BASELINE"
+   },
+   "probe_successes": 17,
+   "probe_n": 30,
+   "probe_score": 0.5667,
+   "dist_to_floor": 0.1083
+  }
+ ]
+}

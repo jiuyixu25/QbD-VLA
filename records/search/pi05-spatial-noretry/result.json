@@ -1,0 +1,479 @@
+{
+ "model": "pi05",
+ "suite": "libero_spatial",
+ "checkpoint": "lerobot/pi05_libero_finetuned_v044",
+ "probe": {
+  "blocks_max": 3,
+  "from": 20,
+  "horizon": 120,
+  "tau": 0.75,
+  "n_tasks": 10,
+  "task_ids": null,
+  "retry_rejected": false,
+  "instruction_modes": null
+ },
+ "groups": {
+  "ve": {
+   "layers": 162,
+   "params": 411070464,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  },
+  "llm": {
+   "layers": 126,
+   "params": 1981808640,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  },
+  "ah_attn": {
+   "layers": 72,
+   "params": 84934656,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  },
+  "ah_adarms_in": {
+   "layers": 18,
+   "params": 56623104,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  },
+  "ah_adarms_post": {
+   "layers": 18,
+   "params": 56623104,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  },
+  "ah_mlp": {
+   "layers": 54,
+   "params": 226492416,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  },
+  "ah_plumbing": {
+   "layers": 5,
+   "params": 5308416,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  }
+ },
+ "path": [
+  {
+   "levels": {
+    "ve": "BASELINE",
+    "llm": "BASELINE",
+    "ah_attn": "BASELINE",
+    "ah_adarms_in": "BASELINE",
+    "ah_adarms_post": "BASELINE",
+    "ah_mlp": "BASELINE",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.8333333333333334,
+   "n": 30,
+   "w_bits_eff": 16.0,
+   "a_bits_eff": 16.0
+  },
+  {
+   "levels": {
+    "ve": "BASELINE",
+    "llm": "W8A8",
+    "ah_attn": "BASELINE",
+    "ah_adarms_in": "BASELINE",
+    "ah_adarms_post": "BASELINE",
+    "ah_mlp": "BASELINE",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.85,
+   "n": 20,
+   "w_bits_eff": 10.38354554358472,
+   "a_bits_eff": 10.38354554358472
+  },
+  {
+   "levels": {
+    "ve": "BASELINE",
+    "llm": "W4A8",
+    "ah_attn": "BASELINE",
+    "ah_adarms_in": "BASELINE",
+    "ah_adarms_post": "BASELINE",
+    "ah_mlp": "BASELINE",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.8,
+   "n": 20,
+   "w_bits_eff": 7.575318315377081,
+   "a_bits_eff": 10.38354554358472
+  },
+  {
+   "levels": {
+    "ve": "W8A8",
+    "llm": "W4A8",
+    "ah_attn": "BASELINE",
+    "ah_adarms_in": "BASELINE",
+    "ah_adarms_post": "BASELINE",
+    "ah_mlp": "BASELINE",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.85,
+   "n": 20,
+   "w_bits_eff": 6.410342801175318,
+   "a_bits_eff": 9.218570029382958
+  },
+  {
+   "levels": {
+    "ve": "W8A8",
+    "llm": "W4A6",
+    "ah_attn": "BASELINE",
+    "ah_adarms_in": "BASELINE",
+    "ah_adarms_post": "BASELINE",
+    "ah_mlp": "BASELINE",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7666666666666667,
+   "n": 30,
+   "w_bits_eff": 6.410342801175318,
+   "a_bits_eff": 7.814456415279138
+  },
+  {
+   "levels": {
+    "ve": "W8A8",
+    "llm": "W4A6",
+    "ah_attn": "BASELINE",
+    "ah_adarms_in": "BASELINE",
+    "ah_adarms_post": "BASELINE",
+    "ah_mlp": "W8A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.8,
+   "n": 20,
+   "w_bits_eff": 5.768462291870715,
+   "a_bits_eff": 7.172575905974535
+  },
+  {
+   "levels": {
+    "ve": "W4A8",
+    "llm": "W4A6",
+    "ah_attn": "BASELINE",
+    "ah_adarms_in": "BASELINE",
+    "ah_adarms_post": "BASELINE",
+    "ah_mlp": "W8A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7666666666666667,
+   "n": 30,
+   "w_bits_eff": 5.185974534769834,
+   "a_bits_eff": 7.172575905974535
+  },
+  {
+   "levels": {
+    "ve": "W4A8",
+    "llm": "W4A6",
+    "ah_attn": "W8A8",
+    "ah_adarms_in": "BASELINE",
+    "ah_adarms_post": "BASELINE",
+    "ah_mlp": "W8A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7666666666666667,
+   "n": 30,
+   "w_bits_eff": 4.945269343780607,
+   "a_bits_eff": 6.931870714985308
+  },
+  {
+   "levels": {
+    "ve": "W4A8",
+    "llm": "W4A6",
+    "ah_attn": "W8A8",
+    "ah_adarms_in": "W8A8",
+    "ah_adarms_post": "BASELINE",
+    "ah_mlp": "W8A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7666666666666667,
+   "n": 30,
+   "w_bits_eff": 4.784799216454457,
+   "a_bits_eff": 6.771400587659158
+  },
+  {
+   "levels": {
+    "ve": "W4A8",
+    "llm": "W4A6",
+    "ah_attn": "W8A8",
+    "ah_adarms_in": "W8A8",
+    "ah_adarms_post": "BASELINE",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7666666666666667,
+   "n": 30,
+   "w_bits_eff": 4.4638589618021545,
+   "a_bits_eff": 6.771400587659158
+  },
+  {
+   "levels": {
+    "ve": "W4A8",
+    "llm": "W4A6",
+    "ah_attn": "W8A8",
+    "ah_adarms_in": "W8A8",
+    "ah_adarms_post": "W8A8",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7333333333333333,
+   "n": 30,
+   "w_bits_eff": 4.303388834476004,
+   "a_bits_eff": 6.610930460333007
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W8A8",
+    "ah_adarms_in": "W8A8",
+    "ah_adarms_post": "W8A8",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7666666666666667,
+   "n": 30,
+   "w_bits_eff": 4.303388834476004,
+   "a_bits_eff": 6.319686581782566
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A8",
+    "ah_adarms_in": "W8A8",
+    "ah_adarms_post": "W8A8",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.8,
+   "n": 20,
+   "w_bits_eff": 4.183036238981391,
+   "a_bits_eff": 6.319686581782566
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A8",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W8A8",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7666666666666667,
+   "n": 30,
+   "w_bits_eff": 4.102801175318316,
+   "a_bits_eff": 6.319686581782566
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A8",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A8",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7333333333333333,
+   "n": 30,
+   "w_bits_eff": 4.02256611165524,
+   "a_bits_eff": 6.319686581782566
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A6",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A8",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7666666666666667,
+   "n": 30,
+   "w_bits_eff": 4.02256611165524,
+   "a_bits_eff": 6.25951028403526
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A4",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A8",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.7,
+   "n": 30,
+   "w_bits_eff": 4.02256611165524,
+   "a_bits_eff": 6.199333986287953
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A4",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A6",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 0.8,
+   "n": 20,
+   "w_bits_eff": 4.02256611165524,
+   "a_bits_eff": 6.159216454456415
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A4",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A4",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "BASELINE"
+   },
+   "score": 1.0,
+   "n": 10,
+   "w_bits_eff": 4.02256611165524,
+   "a_bits_eff": 6.119098922624878
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A4",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A4",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "W8A8"
+   },
+   "score": 1.0,
+   "n": 10,
+   "w_bits_eff": 4.007522037218413,
+   "a_bits_eff": 6.104054848188051
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A4",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A4",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "W4A8"
+   },
+   "score": 0.9,
+   "n": 10,
+   "w_bits_eff": 4.0,
+   "a_bits_eff": 6.104054848188051
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A4",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A4",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "W4A6"
+   },
+   "score": 1.0,
+   "n": 10,
+   "w_bits_eff": 4.0,
+   "a_bits_eff": 6.1002938295788445
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A4",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A4",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "W4A4"
+   },
+   "score": 1.0,
+   "n": 10,
+   "w_bits_eff": 4.0,
+   "a_bits_eff": 6.096532810969638
+  }
+ ],
+ "frontier": [
+  {
+   "levels": {
+    "ve": "W4A6",
+    "llm": "W4A6",
+    "ah_attn": "W4A4",
+    "ah_adarms_in": "W4A8",
+    "ah_adarms_post": "W4A4",
+    "ah_mlp": "W4A8",
+    "ah_plumbing": "W4A4"
+   },
+   "score": 1.0,
+   "n": 10,
+   "w_bits_eff": 4.0,
+   "a_bits_eff": 6.096532810969638
+  }
+ ],
+ "probe_episodes": 590,
+ "wall_s": 4998.0,
+ "stopped_on_budget": false,
+ "selected": {
+  "levels": {
+   "ve": "W4A6",
+   "llm": "W4A6",
+   "ah_attn": "W4A4",
+   "ah_adarms_in": "W4A8",
+   "ah_adarms_post": "W4A4",
+   "ah_mlp": "W4A8",
+   "ah_plumbing": "W4A4"
+  },
+  "score": 1.0,
+  "n": 10,
+  "w_bits_eff": 4.0,
+  "a_bits_eff": 6.096532810969638,
+  "index": 22,
+  "best_score": 1.0,
+  "rule": "cheapest accepted point whose one-sided Wilson upper bound (z=1.28) on the original score reaches the best original score on the path (1.000)"
+ }
+}

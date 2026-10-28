@@ -1,0 +1,222 @@
+{
+ "model": "openvla_oft",
+ "suite": "libero_spatial",
+ "checkpoint": "moojink/openvla-7b-oft-finetuned-libero-spatial",
+ "probe": {
+  "blocks_max": 3,
+  "from": 20,
+  "horizon": 120,
+  "tau": 0.75
+ },
+ "groups": {
+  "ve": {
+   "layers": 209,
+   "params": 728285184,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  },
+  "mp": {
+   "layers": 5,
+   "params": 88178688,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  },
+  "llm": {
+   "layers": 224,
+   "params": 6476005376,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  },
+  "ah": {
+   "layers": 4,
+   "params": 151023616,
+   "levels": [
+    "BASELINE",
+    "W8A8",
+    "W4A8",
+    "W4A6",
+    "W4A4"
+   ]
+  }
+ },
+ "path": [
+  {
+   "levels": {
+    "ve": "BASELINE",
+    "mp": "BASELINE",
+    "llm": "BASELINE",
+    "ah": "BASELINE"
+   },
+   "score": 0.8333333333333334,
+   "n": 30,
+   "w_bits_eff": 16.0,
+   "a_bits_eff": 16.0
+  },
+  {
+   "levels": {
+    "ve": "BASELINE",
+    "mp": "BASELINE",
+    "llm": "W8A8",
+    "ah": "BASELINE"
+   },
+   "score": 0.9,
+   "n": 10,
+   "w_bits_eff": 9.039820961128822,
+   "a_bits_eff": 9.039820961128822
+  },
+  {
+   "levels": {
+    "ve": "BASELINE",
+    "mp": "BASELINE",
+    "llm": "W4A8",
+    "ah": "BASELINE"
+   },
+   "score": 0.9,
+   "n": 10,
+   "w_bits_eff": 5.5597314416932315,
+   "a_bits_eff": 9.039820961128822
+  },
+  {
+   "levels": {
+    "ve": "BASELINE",
+    "mp": "BASELINE",
+    "llm": "W4A6",
+    "ah": "BASELINE"
+   },
+   "score": 0.9,
+   "n": 10,
+   "w_bits_eff": 5.5597314416932315,
+   "a_bits_eff": 7.299776201411026
+  },
+  {
+   "levels": {
+    "ve": "W8A8",
+    "mp": "BASELINE",
+    "llm": "W4A6",
+    "ah": "BASELINE"
+   },
+   "score": 0.9,
+   "n": 10,
+   "w_bits_eff": 4.776996564606366,
+   "a_bits_eff": 6.517041324324161
+  },
+  {
+   "levels": {
+    "ve": "W4A8",
+    "mp": "BASELINE",
+    "llm": "W4A6",
+    "ah": "BASELINE"
+   },
+   "score": 0.8,
+   "n": 20,
+   "w_bits_eff": 4.385629126062933,
+   "a_bits_eff": 6.517041324324161
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "mp": "BASELINE",
+    "llm": "W4A6",
+    "ah": "BASELINE"
+   },
+   "score": 0.9,
+   "n": 10,
+   "w_bits_eff": 4.385629126062933,
+   "a_bits_eff": 6.3213576050524445
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "mp": "W8A8",
+    "llm": "W4A6",
+    "ah": "BASELINE"
+   },
+   "score": 0.85,
+   "n": 20,
+   "w_bits_eff": 4.290857824889023,
+   "a_bits_eff": 6.226586303878533
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "mp": "W4A8",
+    "llm": "W4A6",
+    "ah": "BASELINE"
+   },
+   "score": 0.9,
+   "n": 10,
+   "w_bits_eff": 4.243472174302067,
+   "a_bits_eff": 6.226586303878533
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "mp": "W4A6",
+    "llm": "W4A6",
+    "ah": "BASELINE"
+   },
+   "score": 0.9,
+   "n": 10,
+   "w_bits_eff": 4.243472174302067,
+   "a_bits_eff": 6.202893478585056
+  },
+  {
+   "levels": {
+    "ve": "W4A6",
+    "mp": "W4A4",
+    "llm": "W4A6",
+    "ah": "BASELINE"
+   },
+   "score": 0.9,
+   "n": 10,
+   "w_bits_eff": 4.243472174302067,
+   "a_bits_eff": 6.179200653291578
+  }
+ ],
+ "frontier": [
+  {
+   "levels": {
+    "ve": "W4A6",
+    "mp": "W4A4",
+    "llm": "W4A6",
+    "ah": "BASELINE"
+   },
+   "score": 0.9,
+   "n": 10,
+   "w_bits_eff": 4.243472174302067,
+   "a_bits_eff": 6.179200653291578
+  }
+ ],
+ "probe_episodes": 340,
+ "wall_s": 3906.4,
+ "selected": {
+  "levels": {
+   "ve": "W4A6",
+   "mp": "W4A4",
+   "llm": "W4A6",
+   "ah": "BASELINE"
+  },
+  "score": 0.9,
+  "n": 10,
+  "w_bits_eff": 4.243472174302067,
+  "a_bits_eff": 6.179200653291578,
+  "index": 10,
+  "best_score": 0.9,
+  "rule": "cheapest accepted point whose one-sided Wilson upper bound (z=1.28) on the original score reaches the best original score on the path (0.900)"
+ }
+}

@@ -1,0 +1,157 @@
+{
+ "model": "openvla_oft",
+ "suite": "libero_spatial",
+ "checkpoint": "moojink/openvla-7b-oft-finetuned-libero-spatial",
+ "tau": 0.75,
+ "probe": {
+  "blocks": 3,
+  "from": 20,
+  "horizon": 120,
+  "n_tasks": 10
+ },
+ "anchor": {
+  "successes": 25,
+  "n": 30,
+  "score": 0.8333333333333334,
+  "verdict": "anchor"
+ },
+ "floor": 0.625,
+ "stage_a": [
+  {
+   "level": "W8A8",
+   "verdict": "unsafe",
+   "successes": 1,
+   "n": 10,
+   "score": 0.1,
+   "budget": {
+    "w_bits_eff": 8.0,
+    "a_bits_eff": 8.0
+   }
+  },
+  {
+   "level": "W4A8",
+   "verdict": "unsafe",
+   "successes": 0,
+   "n": 10,
+   "score": 0.0,
+   "budget": {
+    "w_bits_eff": 4.0,
+    "a_bits_eff": 8.0
+   }
+  },
+  {
+   "level": "W4A6",
+   "verdict": "unsafe",
+   "successes": 0,
+   "n": 10,
+   "score": 0.0,
+   "budget": {
+    "w_bits_eff": 4.0,
+    "a_bits_eff": 6.0
+   }
+  },
+  {
+   "level": "W4A4",
+   "verdict": "unsafe",
+   "successes": 0,
+   "n": 10,
+   "score": 0.0,
+   "budget": {
+    "w_bits_eff": 4.0,
+    "a_bits_eff": 4.0
+   }
+  }
+ ],
+ "uniform_floor": "BASELINE",
+ "scan_all": true,
+ "relax_from_baseline": true,
+ "anchor_from": "search/oft-spatial",
+ "stage_b": [
+  {
+   "group": "ve",
+   "to": "W8A8",
+   "verdict": "safe",
+   "successes": 9,
+   "n": 10,
+   "score": 0.9,
+   "bits_saved": 1.56546975417373
+  },
+  {
+   "group": "mp",
+   "to": "W8A8",
+   "verdict": "safe",
+   "successes": 9,
+   "n": 10,
+   "score": 0.9,
+   "bits_saved": 0.18954260234782083
+  },
+  {
+   "group": "llm",
+   "to": "W8A8",
+   "verdict": "safe",
+   "successes": 9,
+   "n": 10,
+   "score": 0.9,
+   "bits_saved": 13.920358077742357
+  },
+  {
+   "group": "ah_fc1",
+   "to": "W8A8",
+   "verdict": "safe",
+   "successes": 9,
+   "n": 10,
+   "score": 0.9,
+   "bits_saved": 0.25244172679843757
+  },
+  {
+   "group": "ah_blocks",
+   "to": "W8A8",
+   "verdict": "safe",
+   "successes": 9,
+   "n": 10,
+   "score": 0.9,
+   "bits_saved": 0.07212620765669442
+  },
+  {
+   "group": "ah_fc2",
+   "to": "W8A8",
+   "verdict": "unsafe",
+   "successes": 1,
+   "n": 10,
+   "score": 0.1,
+   "bits_saved": 6.163128095693082e-05
+  }
+ ],
+ "stage_c": {
+  "joint_levels": {
+   "ve": "W8A8",
+   "mp": "W8A8",
+   "llm": "W8A8",
+   "ah_fc1": "W8A8",
+   "ah_blocks": "W8A8",
+   "ah_fc2": "BASELINE"
+  },
+  "verdict": "safe",
+  "successes": 9,
+  "n": 10,
+  "score": 0.9,
+  "budget": {
+   "w_bits_eff": 8.000030815640478,
+   "a_bits_eff": 8.000030815640478
+  }
+ },
+ "levels": {
+  "ve": "W8A8",
+  "mp": "W8A8",
+  "llm": "W8A8",
+  "ah_fc1": "W8A8",
+  "ah_blocks": "W8A8",
+  "ah_fc2": "BASELINE"
+ },
+ "budget": {
+  "w_bits_eff": 8.000030815640478,
+  "a_bits_eff": 8.000030815640478
+ },
+ "probe_episodes": 100,
+ "wall_s": 1098.1
+}

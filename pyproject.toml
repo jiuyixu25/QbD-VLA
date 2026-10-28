@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qbdvla"
+version = "1.0.0"
+description = "Task-guided mixed-precision quantization of vision-language-action models"
+readme = "README.md"
+authors = [
+  { name = "Jiuyi Xu", email = "jiuyi_xu@mines.edu" },
+  { name = "Xiao Hu" },
+  { name = "Meida Chen" },
+  { name = "Song Wang" },
+  { name = "Yang Ye" },
+  { name = "Yangming Shi" },
+]
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["torch>=2.1", "numpy", "pyyaml", "tqdm"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+Repository = "https://github.com/jiuyixu25/QbD-VLA"
+
+[project.scripts]
+qbdvla = "qbdvla.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["qbdvla*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

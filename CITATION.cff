@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: If you use QbD-VLA, please cite the paper below.
+title: "Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models"
+abstract: >-
+  A task-guided mixed-precision quantization method for vision-language-action
+  models that selects weight and activation bit widths per layer group from
+  task success in short closed-loop evaluations, scoring every candidate with
+  the other groups at their current bit widths and bounding the simulation cost
+  with a sequential test on Wilson bounds.
+date-released: "2026-10-28"
+version: "1.0.0"
+authors:
+  - family-names: Xu
+    given-names: Jiuyi
+    affiliation: Colorado School of Mines
+  - family-names: Hu
+    given-names: Xiao
+    affiliation: Northeastern University
+  - family-names: Chen
+    given-names: Meida
+    affiliation: USC Institute for Creative Technologies
+  - family-names: Wang
+    given-names: Song
+    affiliation: University of Central Florida
+  - family-names: Ye
+    given-names: Yang
+    affiliation: Northeastern University
+  - family-names: Shi
+    given-names: Yangming
+    affiliation: Colorado School of Mines
+license: MIT
+repository-code: "https://github.com/jiuyixu25/QbD-VLA"
+keywords:
+  - vision-language-action models
+  - mixed-precision quantization
+  - post-training quantization
+  - closed-loop evaluation
+  - robot learning

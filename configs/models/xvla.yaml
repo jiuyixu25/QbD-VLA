@@ -1,0 +1,16 @@
+# X-VLA (Zheng et al., 2025). FP32 release; one fine-tuned checkpoint per benchmark (HF org 2toINF).
+env: xvla-stable
+dtype: fp32
+checkpoints:
+  libero:
+    default: 2toINF/X-VLA-Libero
+  simpler:
+    default: 2toINF/X-VLA-Google-Robot
+    widowx: 2toINF/X-VLA-WidowX
+adapter_kwargs:
+  repo: null        # null -> third_party/X-VLA (GitHub copy of the model code, as deploy.py uses); "source: hub" uses the HF auto_map copy
+  steps: 10         # flow-matching denoising steps used by every official client
+notes: |
+  Official eval = deploy.py server + per-benchmark clients (evaluation/*). LIBERO: absolute pose control,
+  800/900-step horizon; SIMPLER: needs the 255isWhite/SimplerEnv
+  fork (absolute base-pose controller).

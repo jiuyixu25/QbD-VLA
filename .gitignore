@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Upstream simulators and model repositories are installed by scripts/env/, never vendored.
+third_party/
+
+# Outputs of your own runs (qbdvla run / search, verify_config.py) and of tables/make_tables.py;
+# the records behind the paper are tracked under records/.
+/results/
+/search/
+tables/generated/
+*.mp4
+*.log
+.DS_Store

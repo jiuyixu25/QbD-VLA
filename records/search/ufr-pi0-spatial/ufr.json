@@ -1,0 +1,128 @@
+{
+ "model": "pi0",
+ "suite": "libero_spatial",
+ "checkpoint": "lerobot/pi0_libero_finetuned_v044",
+ "tau": 0.9,
+ "probe": {
+  "blocks": 3,
+  "from": 20,
+  "horizon": 120,
+  "n_tasks": 10
+ },
+ "anchor": {
+  "successes": 20,
+  "n": 30,
+  "score": 0.6666666666666666,
+  "verdict": "anchor"
+ },
+ "floor": 0.6,
+ "stage_a": [
+  {
+   "level": "W8A8",
+   "verdict": "safe",
+   "successes": 18,
+   "n": 30,
+   "score": 0.6,
+   "budget": {
+    "w_bits_eff": 8.0,
+    "a_bits_eff": 8.0
+   }
+  },
+  {
+   "level": "W4A8",
+   "verdict": "unsafe",
+   "successes": 17,
+   "n": 30,
+   "score": 0.5666666666666667,
+   "budget": {
+    "w_bits_eff": 4.0,
+    "a_bits_eff": 8.0
+   }
+  }
+ ],
+ "uniform_floor": "W8A8",
+ "scan_all": false,
+ "relax_from_baseline": false,
+ "anchor_from": null,
+ "stage_b": [
+  {
+   "group": "ve",
+   "to": "W4A8",
+   "verdict": "safe",
+   "successes": 18,
+   "n": 30,
+   "score": 0.6,
+   "bits_saved": 0.6072950562991011
+  },
+  {
+   "group": "llm",
+   "to": "W4A8",
+   "verdict": "safe",
+   "successes": 8,
+   "n": 10,
+   "score": 0.8,
+   "bits_saved": 2.9278255068280536
+  },
+  {
+   "group": "ah_attn",
+   "to": "W4A8",
+   "verdict": "unsafe",
+   "successes": 17,
+   "n": 30,
+   "score": 0.5666666666666667,
+   "bits_saved": 0.12547823600691643
+  },
+  {
+   "group": "ah_mlp",
+   "to": "W4A8",
+   "verdict": "safe",
+   "successes": 18,
+   "n": 30,
+   "score": 0.6,
+   "bits_saved": 0.33460862935177715
+  },
+  {
+   "group": "ah_plumbing",
+   "to": "W4A8",
+   "verdict": "safe",
+   "successes": 18,
+   "n": 30,
+   "score": 0.6,
+   "bits_saved": 0.004792571514153465
+  }
+ ],
+ "stage_c": {
+  "joint_levels": {
+   "ve": "W4A8",
+   "llm": "W4A8",
+   "ah_attn": "W8A8",
+   "ah_mlp": "W4A8",
+   "ah_plumbing": "W4A8"
+  },
+  "verdict": "unsafe",
+  "successes": 17,
+  "n": 30,
+  "score": 0.5666666666666667,
+  "budget": {
+   "w_bits_eff": 4.125478236006916,
+   "a_bits_eff": 8.0
+  },
+  "fallback": {
+   "group": "llm",
+   "to": "W4A8"
+  }
+ },
+ "levels": {
+  "ve": "W8A8",
+  "llm": "W4A8",
+  "ah_attn": "W8A8",
+  "ah_mlp": "W8A8",
+  "ah_plumbing": "W8A8"
+ },
+ "budget": {
+  "w_bits_eff": 5.072174493171947,
+  "a_bits_eff": 8.0
+ },
+ "probe_episodes": 150,
+ "wall_s": 4679.9
+}

@@ -1,0 +1,48 @@
+{
+ "model": "openvla_oft",
+ "suite": "libero_spatial",
+ "checkpoint": "moojink/openvla-7b-oft-finetuned-libero-spatial",
+ "tau": 0.75,
+ "probe": {
+  "blocks": 3,
+  "from": 20,
+  "horizon": 120,
+  "n_tasks": 10
+ },
+ "anchor": {
+  "successes": 25,
+  "n": 30,
+  "score": 0.8333333333333334,
+  "verdict": "anchor"
+ },
+ "floor": 0.625,
+ "stage_a": [
+  {
+   "level": "W8A8",
+   "verdict": "unsafe",
+   "successes": 1,
+   "n": 10,
+   "score": 0.1,
+   "budget": {
+    "w_bits_eff": 8.0,
+    "a_bits_eff": 8.0
+   }
+  }
+ ],
+ "uniform_floor": "BASELINE",
+ "stage_b": [],
+ "levels": {
+  "ve": "BASELINE",
+  "mp": "BASELINE",
+  "llm": "BASELINE",
+  "ah_fc1": "BASELINE",
+  "ah_blocks": "BASELINE",
+  "ah_fc2": "BASELINE"
+ },
+ "budget": {
+  "w_bits_eff": 16.0,
+  "a_bits_eff": 16.0
+ },
+ "probe_episodes": 40,
+ "wall_s": 427.1
+}
